@@ -1,6 +1,6 @@
 Project Name: Daily Joke
 
-Application Description: I wanted a platform that suggest me a new joke every day, with the possibility to ask for more jokes if the previous one wasn't good enough. I would like to be able to save the jokes I liked, with the possibility to rate them so I can better find the best ones.
+Application Description: I wanted a platform that suggests me a new joke every day, with the possibility to ask for more jokes if the previous one wasn't good enough. I would like to be able to save the jokes I liked, with the possibility to rate them so I can better find the best ones.
 
 Features + Tools/Technologies: The first feature is an external api call to a platform that supplies jokes so that I can put them on my homepage. I also need to implement the fact that I can do the api call when I press the "Get a new joke" button.
 Then, I need to setup a local api so that I can save the joke to my Mongo database and also retrieve all the jokes that I have previously saved. To do that, i will use mongoose, define a joke schema and model and use app.post / app.get functions. The saved jokes will then be displayed on another html page, sorted by date or rating.

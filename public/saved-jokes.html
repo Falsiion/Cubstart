@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Jokes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container2">  <!-- another container class because I want it bigger to easily read the saved jokes -->
+        <a href="index.html" class="view-saved-link" style="float:right; margin-top: -1rem;">⬅ Homepage</a>
+        <h1 class="saved-title">📚 Saved Jokes</h1> <!-- specific class for the title here because it wasn't correctly centered because of the homepage link -->
+        <div id="saved-jokes" class="saved-jokes-list">
+            <!-- Jokes will be loaded here -->
+        </div>
+    </div>
+    <script>
+        async function loadJokes() {
+            try {
+                const response = await fetch('http://localhost:5000/api/jokes');
+                const jokes = await response.json();
+                const container = document.getElementById('saved-jokes');
+                if (jokes.length === 0) {
+                    container.innerHTML = "<p>No jokes saved yet!</p>";
+                } else {
+                    jokes.forEach(joke => {
+                        const div = document.createElement('div');
+                        div.className = 'joke-saved';
+                        div.innerHTML = `
+                            <p>${joke.text}</p>
+                            <small>Saved on ${new Date(joke.date).toLocaleDateString()}</small>
+                        `;
+                        container.appendChild(div);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading jokes:', error);
+                document.getElementById('saved-jokes').innerHTML = "<p>Error loading jokes.</p>";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadJokes);
+    </script>
+</body>
+</html>
