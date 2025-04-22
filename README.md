@@ -6,8 +6,7 @@
 Then, I need to setup a local api so that I can save the joke to my Mongo database and also retrieve all the jokes that I have previously saved. To do that, i will use mongoose, define a joke schema and model and use app.post / app.get functions. The saved jokes will then be displayed on another html page, sorted by date or rating.
 
 **Timeline:** 
-**04/20 :** Basic HTML structure and design with CSS
-**04/21 : **Interactive features with Javascript : API call to the joke platform
-**04/22 :** Local API and MongoDB database 
-By the 04/22, I want to have most of the app done because I will have a busy week (job interviews).
-**04/26-27 :** I will try to make it cleaner and add more features (like the rating of the jokes, dynamic sorting on the saved jokes page) before the final!
+- **04/20 :** Basic HTML structure and design with CSS
+- **04/21 :** Interactive features with Javascript : API call to the joke platform
+- **04/22 :** Local API and MongoDB database. By the 04/22, I want to have most of the app done because I will have a busy week (job interviews).
+- **04/26-27 :** I will try to make it cleaner and add more features (like the rating of the jokes, dynamic sorting on the saved jokes page) before the final!
